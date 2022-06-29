@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "sculk_shrieker_summons",
+  "version": "${version}",
+
+  "name": "Sculk Shrieker Summons",
+  "description": "All placed Sculk Shreikers have the can_summon NBT set to true",
+  "authors": [
+    "bitbloxhub"
+  ],
+
+  "icon": "assets/sculk_shrieker_summons/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "fabric_mods.sculk_shrieker_summons.SculkShreikerSummons"
+    ]
+  },
+  "mixins": [
+    "sculk_shrieker_summons.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}
