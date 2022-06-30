@@ -21,10 +21,12 @@ public class SculkShriekerPlace {
 	@Inject(at = @At("HEAD"), method = "Lnet/minecraft/item/BlockItem;postPlacement(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;)Z	")
 	private void postPlacement(BlockPos pos, World world, @Nullable PlayerEntity player, ItemStack stack,
 			BlockState state, CallbackInfoReturnable<Boolean> cir) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity.getType() == BlockEntityType.SCULK_SHRIEKER) {
-			world.setBlockState(pos,
+		if (!world.isClient) {
+			BlockEntity blockEntity = world.getBlockEntity(pos);
+			if (blockEntity.getType() == BlockEntityType.SCULK_SHRIEKER) {
+				world.setBlockState(pos,
 					state.with(BooleanProperty.of("can_summon"), true));
+			}
 		}
 	}
 }
