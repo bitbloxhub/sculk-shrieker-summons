@@ -4,9 +4,9 @@
   "package": "fabric_mods.sculk_shrieker_summons.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "SculkShriekerPlace"
   ],
   "client": [
-    "SculkShriekerPlace"
   ],
   "injectors": {
     "defaultRequire": 1
